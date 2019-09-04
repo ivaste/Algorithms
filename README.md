@@ -18,19 +18,21 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
  - [...]()
 
 
-<details><summary>##Big O</summary>
-![](https://github.com/ivaste/Algorithms/BigO_Algorithms.JPG)
-![](https://github.com/ivaste/Algorithms/BigO_Sort.JPG)
+<details>
+<summary>Big O</summary>
+<img src="https://github.com/ivaste/Algorithms/blob/master/BigO_Algorithms.JPG"/>
+<img src="https://github.com/ivaste/Algorithms/blob/master/BigO_Sort.JPG" max/>
 
 </details>
 
-<details><summary>##Hash Tables</summary>
+
+<details><summary>Hash Tables</summary>
 ....
 blablabla
 </details>
 
-<details><summary>##Stacks</summary>
-
+<details><summary>Stacks</summary>
+.....
 
 
 </details>
