@@ -5,9 +5,9 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
 
 ### Data Structures
  - [Big O](#Big)
- - [Array and Strings](#Array)
- - [Hash Tables](#Hash%20Tables)
- - [Linked List](#Linked%20List)
+ - [Array and Strings](#Array-and-Strings)
+ - [Hash Tables](#Hash-Tables)
+ - [Linked List](#Linked-List)
  - [Stacks](#Stacks)
  - [Queues](#Queues)
  - [Trees](#Trees)
@@ -34,7 +34,7 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
 
 ## Hash Tables
 ....
-blablabla
+
 
 <!-- ------------------------------------------------------------------- -->
 
@@ -66,9 +66,9 @@ Solution techniques:
 ### Singly Linked Lists
 Each node stores a reference to an object and a reference to the next node of the list.
 First and last node are known as the **head** and **tail**
-<center>
+<p align="center">
 <img src="https://github.com/ivaste/Algorithms/blob/master/Images/SinglyLinkedList.JPG"/>
-</center>
+</p>
 The linked list instance must keep a reference to the head of the list. Often is also stored a reference to the tail.
 
 **Implementations:**
@@ -80,15 +80,17 @@ Each node keeps an explicit reference to the node before it and a reference to t
 Allow a greater variety of O(1)-time update operations, including insertions and deletions at arbitrary positions within the list.
 
 Special nodes at both ends of the list: a header node at the beginning of the list, and a trailer node at the end of the list. They do not store elements.
-<center>
+<p align="center">
 <img src="https://github.com/ivaste/Algorithms/blob/master/Images/DoublyLinkedList.JPG"/>
-</center>
+</p>
 An empty list is initialized so that the next field of the header points to the trailer, and the prev field of the trailer points to the header.
-**Implementation:** [DoublyLinkedBase.py](https://github.com/ivaste/Algorithms/blob/master/DoublyLinkedBase.py) (More common)
+
+**Implementation:** [DoublyLinkedBase.py](https://github.com/ivaste/Algorithms/blob/master/DoublyLinkedBase.py)
 
 ### Positional Linked Lists
 Provides a user a way to refer to elements anywhere in a sequence, and to perform arbitrary insertions and deletions.
-.....
+
+continue.....
 
 <!-- ------------------------------------------------------------------- -->
 
