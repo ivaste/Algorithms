@@ -6,7 +6,8 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
 ### Data Structures
  - [Big O](#Big)
  - [Array and Strings](#Array)
- - [Hash Tables](#Hash)
+ - [Hash Tables](#Hash%20Tables)
+ - [Linked List](#Linked%20List)
  - [Stacks](#Stacks)
  - [Queues](#Queues)
  - [Trees](#Trees)
@@ -21,15 +22,75 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
 ## Big O
 <details>
 <img src="https://github.com/ivaste/Algorithms/blob/master/BigO_Algorithms.JPG"/>
-<img src="https://github.com/ivaste/Algorithms/blob/master/BigO_Sort.JPG" max/>
+<img src="https://github.com/ivaste/Algorithms/blob/master/BigO_Sort.JPG"/>
 
 </details>
 
+
+## Array and Strings
+......
+
+<!-- ------------------------------------------------------------------- -->
 
 ## Hash Tables
 ....
 blablabla
 
+<!-- ------------------------------------------------------------------- -->
+
+## Linked List
+Advantages of Array-Based Sequences
+-	O(1)-time access to an element based on an integer index. in a linked list requires O(k)
+-	O(1) operations typically are more efficient.
+-	typically use proportionally less memory than linked structures.
+Advantages of Link-Based Sequences:
+-	provide worst-case time bounds for their operations. In contrast to the amortized bounds associated with the expansion or contraction of a dynamic array.
+-	O(1)-time insertions and deletions at arbitrary positions with the PositionalList class
+
+Solution techniques:
+-	In an interview, you must understand whether it is a singly linked list or a doubly linked list.
+-	**The "Runner" Technique:** iterate through the linked list with two pointers simultaneously, with one ahead of the other. The "fast" node might be ahead by a fixed amount, or it might be hopping multiple nodes for each one node that the "slow" node iterates through.
+-	Many LinkedList problems involve **recursion**.
+
+**Time Complexity:**
+
+| Operation       | Running Time |
+| --------------- |-------------:|
+| L.addFirst(e)   | O(1)         |
+| L.addLast(e)    | O(1)         |
+| L.removeFirst() | O(1)         |
+| L.removeLast()  | **O(n)**     |
+| L.isEmpty()     | O(1)         |
+| len(L)          | O(1)         |
+
+### Singly Linked Lists
+Each node stores a reference to an object and a reference to the next node of the list.
+First and last node are known as the **head** and **tail**
+<center>
+<img src="https://github.com/ivaste/Algorithms/blob/master/Images/SinglyLinkedList.JPG"/>
+</center>
+The linked list instance must keep a reference to the head of the list. Often is also stored a reference to the tail.
+
+**Implementations:**
+- [SingleLinkedList.py](https://github.com/ivaste/Algorithms/blob/master/SingleLinkedList.py) (More common)
+- [SingleLinkedList2.py](https://github.com/ivaste/Algorithms/blob/master/SingleLinkedList2.py) (Less common but easier)
+
+### Doubly Linked Lists
+Each node keeps an explicit reference to the node before it and a reference to the node after it.
+Allow a greater variety of O(1)-time update operations, including insertions and deletions at arbitrary positions within the list.
+
+Special nodes at both ends of the list: a header node at the beginning of the list, and a trailer node at the end of the list. They do not store elements.
+<center>
+<img src="https://github.com/ivaste/Algorithms/blob/master/Images/DoublyLinkedList.JPG"/>
+</center>
+An empty list is initialized so that the next field of the header points to the trailer, and the prev field of the trailer points to the header.
+**Implementation:** [DoublyLinkedBase.py](https://github.com/ivaste/Algorithms/blob/master/DoublyLinkedBase.py) (More common)
+
+### Positional Linked Lists
+Provides a user a way to refer to elements anywhere in a sequence, and to perform arbitrary insertions and deletions.
+.....
+
+<!-- ------------------------------------------------------------------- -->
 
 ## Stacks
 
@@ -54,14 +115,16 @@ A newly created stack is empty.
 
 | Operation   | Running Time |
 | ----------- |-------------:|
-| S.push()    | O(1)         |
+| S.push(e)   | O(1)         |
 | S.pop()     | O(1)         |
 | S.top()     | O(1)         |
-| len(S)      | O(1)         |
 | S.isEmpty() | O(1)         |
+| len(S)      | O(1)         |
 
 **Space Complexity:** O(n)
 
+
+<!-- ------------------------------------------------------------------- -->
 
 ## Queues
 
@@ -93,3 +156,6 @@ A newly created queue is empty.
 | len(Q)       | O(1)         |
 
 **Space Complexity:** O(n)
+
+
+<!-- ------------------------------------------------------------------- -->
