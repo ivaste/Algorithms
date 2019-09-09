@@ -31,9 +31,9 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
 blablabla
 </details>
 
-<details><summary>Stacks</summary>
-.....
-Last-in, first-out (LIFO) principle. 
+##Stacks
+
+*Last-in, first-out (LIFO)* principle. 
 Used to:
 - reverse a data sequence.
 - Recursive algorithms to store data and pick them up lately
@@ -60,4 +60,3 @@ A newly created stack is empty.
 
 *Space Complexity:* O(n)
 
-</details>
