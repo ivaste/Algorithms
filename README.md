@@ -4,13 +4,22 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
 # ....WORK IN PROGRESS....
 
 ### Data Structures
- - [Big O](#Big)
+ - [Big O](#Big-O)
  - [Array and Strings](#Array-and-Strings)
  - [Hash Tables](#Hash-Tables)
  - [Linked List](#Linked-List)
  - [Stacks](#Stacks)
  - [Queues](#Queues)
  - [Trees](#Trees)
+  - [General Trees](General-Trees)
+	- [Binary Trees](Binary-Trees)
+	- [Traversal Algorithms](Traversal-Algorithms)
+	- [Solve Tree problems recursively](Solve-Tree-problems-recursively)
+ - [Search Trees](Search-Trees)
+  - [Binary Search Trees](Binary-Search-Trees)
+	- [Balanced Search Trees](Balanced-Search-Trees)
+	- [AVL Trees](AVL-Trees)
+	- [Red-Black Trees](Red-Black-Trees)
  - [Tries](#Tries)
  - [Graphs](#Graphs)
  - [Heaps](#Heaps)
@@ -161,3 +170,29 @@ A newly created queue is empty.
 
 
 <!-- ------------------------------------------------------------------- -->
+
+## Trees
+
+### General Trees
+...
+### Binary Trees
+...
+### Traversal Algorithms
+...
+### Solve Tree problems recursively
+...
+
+
+<!-- ------------------------------------------------------------------- -->
+
+## Search Trees
+....
+
+### Binary Search Trees
+...
+### Balanced Search Trees
+...
+### AVL Trees
+...
+### Red-Black Trees
+...
