@@ -174,12 +174,12 @@ A newly created queue is empty.
 ## Trees
 
 Node class:
-''
+'''python
 class Node(object):
 	def __init__(self, val, children):
 		self.val = val
 		self.children = children
-''
+'''
 
 Tree class: in interviews typically is not used.
 
@@ -190,18 +190,26 @@ Tree class: in interviews typically is not used.
 
 
 **Edge:** pair of nodes (u,v) such that u is the parent of v, or vice versa
+
 **Path:** sequence of nodes such that any two consecutive nodes in the sequence form an edge.
+
 **Ancestor:** x is ancestor of y if x=y or x is ancestor of the father of y
+
 **Descendant:** x is descendant of y if y is ancestor of x
+
 **Internal nodes:** nodes with at least 1 child
+
 **External nodes (leaf):** nodes without children
 
 
 **Ordered Tree:** if there is a meaningful linear order among the children of each node; arranging siblings left to right, according to their order.
 
 **Depth** of a node (2 ways):
- - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=abs(ancestors(v))-1" />
- - ...
+ - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1" />
+ - <img src="https://latex.codecogs.com/gif.latex?\bold{depth_T(v)}=\begin{cases} 0, & \mbox{if } n\mbox{v=root} \\ 1+depth_T(parent(v)), & \mbox{} n\mbox{ otherwise} \end{cases}
+ 
+ " />
+
 
 ...
 ### Binary Trees
