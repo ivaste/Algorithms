@@ -11,15 +11,15 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
  - [Stacks](#Stacks)
  - [Queues](#Queues)
  - [Trees](#Trees)
-  - [General Trees](General-Trees)
-	- [Binary Trees](Binary-Trees)
-	- [Traversal Algorithms](Traversal-Algorithms)
-	- [Solve Tree problems recursively](Solve-Tree-problems-recursively)
- - [Search Trees](Search-Trees)
-  - [Binary Search Trees](Binary-Search-Trees)
-	- [Balanced Search Trees](Balanced-Search-Trees)
-	- [AVL Trees](AVL-Trees)
-	- [Red-Black Trees](Red-Black-Trees)
+  - [General Trees](#General-Trees)
+	- [Binary Trees](#Binary-Trees)
+	- [Traversal Algorithms](#Traversal-Algorithms)
+	- [Solve Tree problems recursively](#Solve-Tree-problems-recursively)
+ - [Search Trees](#Search-Trees)
+  - [Binary Search Trees](#Binary-Search-Trees)
+	- [Balanced Search Trees](#Balanced-Search-Trees)
+	- [AVL Trees](#AVL-Trees)
+	- [Red-Black Trees](#Red-Black-Trees)
  - [Tries](#Tries)
  - [Graphs](#Graphs)
  - [Heaps](#Heaps)
@@ -173,7 +173,36 @@ A newly created queue is empty.
 
 ## Trees
 
+Node class:
+''
+class Node(object):
+	def __init__(self, val, children):
+		self.val = val
+		self.children = children
+''
+
+Tree class: in interviews typically is not used.
+
 ### General Trees
+**Tree** _T_ is a set of **nodes** storing elements such that the nodes have a parent-child relationship that satisfies the following properties:
+ - If _T_ is nonempty, it has a special node, called the **root** of _T_, that has no parent.
+ - Each node _v_ of _T_ different from the root has a unique **parent** node _w_; every node with parent _w_ is a **child** of _w_.
+
+
+**Edge:** pair of nodes (u,v) such that u is the parent of v, or vice versa
+**Path:** sequence of nodes such that any two consecutive nodes in the sequence form an edge.
+**Ancestor:** x is ancestor of y if x=y or x is ancestor of the father of y
+**Descendant:** x is descendant of y if y is ancestor of x
+**Internal nodes:** nodes with at least 1 child
+**External nodes (leaf):** nodes without children
+
+
+**Ordered Tree:** if there is a meaningful linear order among the children of each node; arranging siblings left to right, according to their order.
+
+**Depth** of a node (2 ways):
+ - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=abs(ancestors(v))-1" />
+ - ...
+
 ...
 ### Binary Trees
 ...
