@@ -1,4 +1,4 @@
-# Data Structures and Algorithms
+<h1 align="center"> # Data Structures and Algorithms</h1>
 Quick reference of Data Structures and Algorithms in Python to easily pass coding interviews.
 
 # ....WORK IN PROGRESS....
@@ -285,14 +285,48 @@ Level numbering f(v): index of the array where to store the node v
  - If v is the root of T, then f(v)=0.
  - If v is the left child of position q, then f(v)=2f(w)+1.
  - If v is the right child of position q, then f(v)=2f(w)+2.
+
 Parent index = <img src="https://latex.codecogs.com/gif.latex?\left&space;\lfloor&space;(f(v)-1)/2&space;\right&space;\rfloor" title="\left \lfloor (f(v)-1)/2 \right \rfloor" />
+
 Array length  N=2^n-1 worst case (That is prohibitive if n is very large)
 
 
 ## Traversal Algorithms
-...
+**Depth-first:**
+ - **Preorder:** first visit the father then (recursively) his children. **O(n)**
+ - **Postorder:** first visit (recursively) the children than the father. **O(n)**
+ - **Inorder:** visit left child, visit father, visit right child. Applied to binary trees.
+
+**Breadth-first:**
+ - **Level-order:** visit all nodes in a level before the next level. Uses a FIFO to save the order in which visits nodes. Time **O(n)** in order to n calls for enqueue and dequeue.
+
+
 ## Solve Tree problems recursively
-...
+**Top-down:** visit the node first to come up with some values, and pass these values to its children when calling the function recursively. Kind of preorder.
+
+**top_down(root, params):**
+1. return specific value for null node
+2. update the answer if needed                      // answer <-- params
+3. left_ans = top_down(root.left, left_params)      // left_params <-- root.val, params
+4. right_ans = top_down(root.right, right_params)   // right_params <-- root.val, params 
+5. return the answer if needed                      // answer <-- left_ans, right_ans
+
+**Bottom-Up:** first call the functions recursively for all the children nodes and then come up with the answer according to the return values and the value of the root node itself. Kind of postorder.
+**bottom_up(root):**
+1. return specific value for null node
+2. left_ans = bottom_up(root.left)          // call function recursively for left child
+3. right_ans = bottom_up(root.right)        // call function recursively for right child
+4. return answers                           // answer <-- left_ans, right_ans, root.val
+
+When you meet a tree problem, ask yourself two questions:
+ - Can you determine some parameters to help the node know the answer of itself?
+ - Can you use these parameters and the value of the node itself to determine what should be the parameters parsing to its children?
+
+If the answers are both yes, try to solve this problem using a "**top-down**" recursion solution.
+Or you can think the problem in this way:
+ - for a node in a tree, if you know the answer of its children, can you calculate the answer of the node? 
+
+If the answer is yes, solving the problem recursively from **bottom up**.
 
 
 <!-- ------------------------------------------------------------------- -->
