@@ -52,6 +52,7 @@ Advantages of Array-Based Sequences
 -	O(1)-time access to an element based on an integer index. in a linked list requires O(k)
 -	O(1) operations typically are more efficient.
 -	typically use proportionally less memory than linked structures.
+
 Advantages of Link-Based Sequences:
 -	provide worst-case time bounds for their operations. In contrast to the amortized bounds associated with the expansion or contraction of a dynamic array.
 -	O(1)-time insertions and deletions at arbitrary positions with the PositionalList class
