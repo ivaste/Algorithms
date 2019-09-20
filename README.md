@@ -1,4 +1,4 @@
-<h1 align="center"> # Data Structures and Algorithms</h1>
+# Data Structures and Algorithms
 Quick reference of Data Structures and Algorithms in Python to easily pass coding interviews.
 
 # ....WORK IN PROGRESS....
@@ -189,34 +189,24 @@ Tree class: in interviews typically is not used.
  - If _T_ is nonempty, it has a special node, called the **root** of _T_, that has no parent.
  - Each node _v_ of _T_ different from the root has a unique **parent** node _w_; every node with parent _w_ is a **child** of _w_.
 
-
-**Edge:** pair of nodes (u,v) such that u is the parent of v, or vice versa
-
-**Path:** sequence of nodes such that any two consecutive nodes in the sequence form an edge.
-
-**Ancestor:** x is ancestor of y if x=y or x is ancestor of the father of y
-
-**Descendant:** x is descendant of y if y is ancestor of x
-
-**Internal nodes:** nodes with at least 1 child
-
+**Edge:** pair of nodes (u,v) such that u is the parent of v, or vice versa  
+**Path:** sequence of nodes such that any two consecutive nodes in the sequence form an edge.  
+**Ancestor:** x is ancestor of y if x=y or x is ancestor of the father of y  
+**Descendant:** x is descendant of y if y is ancestor of x  
+**Internal nodes:** nodes with at least 1 child  
 **External nodes (leaf):** nodes without children
-
 
 **Ordered Tree:** if there is a meaningful linear order among the children of each node; arranging siblings left to right, according to their order.
 
 **Depth** of a node (2 ways):
  - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1" />
- - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" /> **O(n)** worst case
- 
-**Level _i_:** set of nodes at depth _i_
-
+ - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" /> **O(n)** worst case  
+**Level _i_:** set of nodes at depth _i_  
 **Height** of a node:
  - <img src="https://latex.codecogs.com/gif.latex?\text{height}_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=\text{leaf}&space;\\&space;1&plus;\text{max}_{\forall&space;w:\text{\&space;child\&space;of\&space;}v}(\text{height}_T(w))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="\text{height}_T(v)=\begin{cases} 0 & \text{ if } v=\text{leaf} \\ 1+\text{max}_{\forall w:\text{\ child\ of\ }v}(\text{height}_T(w)) & \text{ otherwise } \end{cases}" />  **O(n)** worst case
 
 
 **Implementation with Linked Structure:** Each node store a single container of references to its children.
-
 <p align="center">
 <img src="https://github.com/ivaste/Algorithms/blob/master/Images/GeneralTree.JPG"/>
 </p>
@@ -238,20 +228,20 @@ Tree class: in interviews typically is not used.
 **Binary tree:** ordered tree such that:
  -	**Every node has at most two children.**
  -	Each child node is labeled as being either a **left** child or a **right** child.
- -	A left child precedes a right child in the order of children of a node.
+ -	A left child precedes a right child in the order of children of a node.  
 Recursive definition:
  -	A node r, called the root of T, that stores an element
  -	A binary tree (possibly empty), called the left subtree of T
  -	A binary tree (possibly empty), called the right subtree of T
-Properties:
+Properties:  
 <img src="https://github.com/ivaste/Algorithms/blob/master/Images/BinaryTreePropreties.JPG"/>
 
-**Proper(full) Binary tree:** if each node has either 0 or 2 children
+**Proper(full) Binary tree:** if each node has either 0 or 2 children  
 Proprieties:
  - <img src="https://latex.codecogs.com/gif.latex?\text{log}(n&plus;1)-1\leq&space;h\leq&space;(n-1)/2" title="\text{log}(n+1)-1\leq h\leq (n-1)/2" />
  - <img src="https://latex.codecogs.com/gif.latex?n_E=n_I&plus;1" title="n_E=n_I+1" />
 
-**Complete Binary tree:** every level is fully filled except perhaps the last level. (Filled left to right)
+**Complete Binary tree:** every level is fully filled except perhaps the last level. (Filled left to right)  
 **Perfect Binary tree:** bot full and complete. All levels has the maximum number of nodes.
 
 **Linked Structure Implementation:**
@@ -284,10 +274,8 @@ class Node(object):
 Level numbering f(v): index of the array where to store the node v
  - If v is the root of T, then f(v)=0.
  - If v is the left child of position q, then f(v)=2f(w)+1.
- - If v is the right child of position q, then f(v)=2f(w)+2.
-
-Parent index = <img src="https://latex.codecogs.com/gif.latex?\left&space;\lfloor&space;(f(v)-1)/2&space;\right&space;\rfloor" title="\left \lfloor (f(v)-1)/2 \right \rfloor" />
-
+ - If v is the right child of position q, then f(v)=2f(w)+2.  
+Parent index = <img src="https://latex.codecogs.com/gif.latex?\left&space;\lfloor&space;(f(v)-1)/2&space;\right&space;\rfloor" title="\left \lfloor (f(v)-1)/2 \right \rfloor" />  
 Array length  N=2^n-1 worst case (That is prohibitive if n is very large)
 
 
@@ -302,8 +290,7 @@ Array length  N=2^n-1 worst case (That is prohibitive if n is very large)
 
 
 ## Solve Tree problems recursively
-**Top-down:** visit the node first to come up with some values, and pass these values to its children when calling the function recursively. Kind of preorder.
-
+**Top-down:** visit the node first to come up with some values, and pass these values to its children when calling the function recursively. Kind of preorder.  
 **top_down(root, params):**
 1. return specific value for null node
 2. update the answer if needed                      // answer <-- params
@@ -311,7 +298,7 @@ Array length  N=2^n-1 worst case (That is prohibitive if n is very large)
 4. right_ans = top_down(root.right, right_params)   // right_params <-- root.val, params 
 5. return the answer if needed                      // answer <-- left_ans, right_ans
 
-**Bottom-Up:** first call the functions recursively for all the children nodes and then come up with the answer according to the return values and the value of the root node itself. Kind of postorder.
+**Bottom-Up:** first call the functions recursively for all the children nodes and then come up with the answer according to the return values and the value of the root node itself. Kind of postorder.  
 **bottom_up(root):**
 1. return specific value for null node
 2. left_ans = bottom_up(root.left)          // call function recursively for left child
@@ -320,21 +307,43 @@ Array length  N=2^n-1 worst case (That is prohibitive if n is very large)
 
 When you meet a tree problem, ask yourself two questions:
  - Can you determine some parameters to help the node know the answer of itself?
- - Can you use these parameters and the value of the node itself to determine what should be the parameters parsing to its children?
-
+ - Can you use these parameters and the value of the node itself to determine what should be the parameters parsing to its children?  
 If the answers are both yes, try to solve this problem using a "**top-down**" recursion solution.
 Or you can think the problem in this way:
- - for a node in a tree, if you know the answer of its children, can you calculate the answer of the node? 
-
+ - for a node in a tree, if you know the answer of its children, can you calculate the answer of the node?   
 If the answer is yes, solving the problem recursively from **bottom up**.
 
 
 <!-- ------------------------------------------------------------------- -->
 
 # Search Trees
-....
+If you want to store data in order and need several operations, such as search, insertion or deletion, at the same time, a BST might be a good choice.
 
 ## Binary Search Trees
+**Binary Search Trees:** binary tree with each node storing a key-value pair (k,v) such that:
+ - keys in the left subtree of n are ≤k
+ - keys in the right subtree of n are >k
+
+<p align="center">**n.left.val≤n.val<n.right.val**</p>
+
+**Inorder** visits nodes in increasing order of their keys. **O(n)**
+
+**Search(k):** for each node:
+ - return the node if the target value is equal to the value of the node;
+ - continue searching in the left subtree if the target value is less than the value of the node;
+ - continue searching in the right subtree if the target value is larger than the value of the node.
+Time: O(h)=O(log⁡n ) average, worst O(n)  
+Space: O(h)=O(log⁡n ) average, worst O(n)  
+The iterative: Time O(h)=O(log⁡n ), Space O(1)
+
+**Insert(v):** for each node, we will:
+ - search the left or right subtrees according to the relation of the value of the node and the value of our target node;
+ - repeat STEP 1 until reaching an external node;
+ - add the new node as its left or right child depending on the relation of the value of the node and the value of our target node.
+Time: O(h)=O(log⁡ n) average, worst O(n)  
+Space: O(h)=O(log⁡ n) average, worst O(n)
+
+
 ...
 ## Balanced Search Trees
 ...
