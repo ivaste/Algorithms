@@ -207,6 +207,31 @@ Tree class: in interviews typically is not used.
 **Depth** of a node (2 ways):
  - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1" />
  - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" />
+ **O(n)** worst case
+ 
+**Level _i_:** set of nodes at depth _i_
+
+**Height** of a node: <img src="https://latex.codecogs.com/gif.latex?\text{height}_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=\text{leaf}&space;\\&space;1&plus;\text{max}_{\forall&space;w:\text{\&space;child\&space;of\&space;}v}(\text{height}_T(w))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="\text{height}_T(v)=\begin{cases} 0 & \text{ if } v=\text{leaf} \\ 1+\text{max}_{\forall w:\text{\ child\ of\ }v}(\text{height}_T(w)) & \text{ otherwise } \end{cases}" />
+ **O(n)** worst case
+
+
+**Implementation with Linked Structure:** Each node store a single container of references to its children.
+
+<p align="center">
+<img src="https://github.com/ivaste/Algorithms/blob/master/Images/GeneralTree.JPG"/>
+</p>
+
+**Time Complexity:**
+
+| Operation    | Running Time |
+| -----------  |-------------:|
+| len, isEmpty | O(1)         |
+| root, parent, isRoot, isLeaf  | O(1)         |
+| children(n)    | O(#children+1)         |
+| depth(n)  | O(depth of n + 1)         |
+| height       | O(n)         |
+
+**Space Complexity:** O(n)
 
 
 ...
