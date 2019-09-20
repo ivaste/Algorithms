@@ -206,7 +206,7 @@ Tree class: in interviews typically is not used.
 
 **Depth** of a node (2 ways):
  - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1" />
- - <img src="https://latex.codecogs.com/gif.latex?\bold{depth_T(v)}=\begin{cases}0,&\mbox{if}n\mbox{v=root}\\1+depth_T(parent(v)),& \mbox{}n\mbox{otherwise}\end{cases}"/>
+ - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" />
 
 
 ...
