@@ -200,7 +200,8 @@ Tree class: in interviews typically is not used.
 
 **Depth** of a node (2 ways):
  - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1" />
- - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" /> **O(n)** worst case  
+ - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" /> **O(n)** worst case
+
 **Level _i_:** set of nodes at depth _i_  
 **Height** of a node:
  - <img src="https://latex.codecogs.com/gif.latex?\text{height}_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=\text{leaf}&space;\\&space;1&plus;\text{max}_{\forall&space;w:\text{\&space;child\&space;of\&space;}v}(\text{height}_T(w))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="\text{height}_T(v)=\begin{cases} 0 & \text{ if } v=\text{leaf} \\ 1+\text{max}_{\forall w:\text{\ child\ of\ }v}(\text{height}_T(w)) & \text{ otherwise } \end{cases}" />  **O(n)** worst case
@@ -232,7 +233,7 @@ Tree class: in interviews typically is not used.
 Recursive definition:
  -	A node r, called the root of T, that stores an element
  -	A binary tree (possibly empty), called the left subtree of T
- -	A binary tree (possibly empty), called the right subtree of T
+ -	A binary tree (possibly empty), called the right subtree of T\
 Properties:  
 <img src="https://github.com/ivaste/Algorithms/blob/master/Images/BinaryTreePropreties.JPG"/>
 
@@ -322,9 +323,8 @@ If you want to store data in order and need several operations, such as search, 
 ## Binary Search Trees
 **Binary Search Trees:** binary tree with each node storing a key-value pair (k,v) such that:
  - keys in the left subtree of n are ≤k
- - keys in the right subtree of n are >k
-
-<p align="center">**n.left.val≤n.val<n.right.val**</p>
+ - keys in the right subtree of n are >k\
+**n.left.val≤n.val<n.right.val**
 
 **Inorder** visits nodes in increasing order of their keys. **O(n)**
 
@@ -332,19 +332,40 @@ If you want to store data in order and need several operations, such as search, 
  - return the node if the target value is equal to the value of the node;
  - continue searching in the left subtree if the target value is less than the value of the node;
  - continue searching in the right subtree if the target value is larger than the value of the node.
-Time: O(h)=O(log⁡n ) average, worst O(n)  
-Space: O(h)=O(log⁡n ) average, worst O(n)  
-The iterative: Time O(h)=O(log⁡n ), Space O(1)
+**Time:** O(h)=**O(log⁡  n) average**, worst O(n)  
+Space: O(h)=O(log ⁡n) average, worst O(n)  
+The iterative: Time O(h)=O(log⁡ n), Space O(1)
 
 **Insert(v):** for each node, we will:
  - search the left or right subtrees according to the relation of the value of the node and the value of our target node;
  - repeat STEP 1 until reaching an external node;
- - add the new node as its left or right child depending on the relation of the value of the node and the value of our target node.
-Time: O(h)=O(log⁡ n) average, worst O(n)  
+ - add the new node as its left or right child depending on the relation of the value of the node and the value of our target node.\
+**Time:** O(h)=**O(log⁡ n) average**, worst O(n)  
 Space: O(h)=O(log⁡ n) average, worst O(n)
 
+**Deletion(k):** begin by calling TreeSearch(root, k) to find the node. If the search is successful, we distinguish between 3 cases:
+  - n has 0 child: delete node n\
+ ........
+  - n has 1 child: delete node n and replace it with its child\
+ ........
+  - •	n has 2 children: replace the node with its in-order successor or predecessor node and delete that node.\
+.........
 
-...
+**Time Complexity:**
+
+| Operation    | Running Time |
+| -----------  |-------------:|
+| k in T | O(h)         |
+| T[k], T[k]=v  | O(h)         |
+| T.delete(n)   | O(h)         |
+| T.search(k)  | O(h)         |
+
+**Space Complexity:** O(n)
+
+Binary search tree T is therefore an efficient implementation of a map with n entries only if its height is small.\
+On average, a binary search tree with n keys generated from a random series of insertions and removals of keys has expected height O(logn).\
+In applications where one cannot guarantee the random nature of updates, rely on variations of search trees, that guarantee a worst-case height of O(logn), and thus O(logn) worstcase time for searches, insertions, and deletions.
+
 ## Balanced Search Trees
 ...
 ## AVL Trees
