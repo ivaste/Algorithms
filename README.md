@@ -171,19 +171,20 @@ A newly created queue is empty.
 
 <!-- ------------------------------------------------------------------- -->
 
-## Trees
+# Trees
 
 **Node class:**
 ```python
 class Node(object):
-	def __init__(self, val, children):
+	def __init__(self, val, children, parent):
 		self.val = val
 		self.children = children
+		self.parent = parent
 ```
 
 Tree class: in interviews typically is not used.
 
-### General Trees
+## General Trees
 **Tree** _T_ is a set of **nodes** storing elements such that the nodes have a parent-child relationship that satisfies the following properties:
  - If _T_ is nonempty, it has a special node, called the **root** of _T_, that has no parent.
  - Each node _v_ of _T_ different from the root has a unique **parent** node _w_; every node with parent _w_ is a **child** of _w_.
@@ -206,13 +207,12 @@ Tree class: in interviews typically is not used.
 
 **Depth** of a node (2 ways):
  - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1" />
- - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" />
- **O(n)** worst case
+ - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" /> **O(n)** worst case
  
 **Level _i_:** set of nodes at depth _i_
 
-**Height** of a node: <img src="https://latex.codecogs.com/gif.latex?\text{height}_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=\text{leaf}&space;\\&space;1&plus;\text{max}_{\forall&space;w:\text{\&space;child\&space;of\&space;}v}(\text{height}_T(w))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="\text{height}_T(v)=\begin{cases} 0 & \text{ if } v=\text{leaf} \\ 1+\text{max}_{\forall w:\text{\ child\ of\ }v}(\text{height}_T(w)) & \text{ otherwise } \end{cases}" />
- **O(n)** worst case
+**Height** of a node:
+ - <img src="https://latex.codecogs.com/gif.latex?\text{height}_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=\text{leaf}&space;\\&space;1&plus;\text{max}_{\forall&space;w:\text{\&space;child\&space;of\&space;}v}(\text{height}_T(w))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="\text{height}_T(v)=\begin{cases} 0 & \text{ if } v=\text{leaf} \\ 1+\text{max}_{\forall w:\text{\ child\ of\ }v}(\text{height}_T(w)) & \text{ otherwise } \end{cases}" />  **O(n)** worst case
 
 
 **Implementation with Linked Structure:** Each node store a single container of references to its children.
@@ -234,25 +234,77 @@ Tree class: in interviews typically is not used.
 **Space Complexity:** O(n)
 
 
+## Binary Trees
+**Binary tree:** ordered tree such that:
+ -	**Every node has at most two children.**
+ -	Each child node is labeled as being either a **left** child or a **right** child.
+ -	A left child precedes a right child in the order of children of a node.
+Recursive definition:
+ -	A node r, called the root of T, that stores an element
+ -	A binary tree (possibly empty), called the left subtree of T
+ -	A binary tree (possibly empty), called the right subtree of T
+Properties:
+<img src="https://github.com/ivaste/Algorithms/blob/master/Images/BinaryTreePropreties.JPG"/>
+
+**Proper(full) Binary tree:** if each node has either 0 or 2 children
+Proprieties:
+ - <img src="https://latex.codecogs.com/gif.latex?\text{log}(n&plus;1)-1\leq&space;h\leq&space;(n-1)/2" title="\text{log}(n+1)-1\leq h\leq (n-1)/2" />
+ - <img src="https://latex.codecogs.com/gif.latex?n_E=n_I&plus;1" title="n_E=n_I+1" />
+
+**Complete Binary tree:** every level is fully filled except perhaps the last level. (Filled left to right)
+**Perfect Binary tree:** bot full and complete. All levels has the maximum number of nodes.
+
+**Linked Structure Implementation:**
+```python
+class Node(object):
+	def __init__(self, val=None, left=None, right=None, parent=None):
+		self.val = val
+		self.left = left
+		self.right = right
+		self.parent = parent
+```
+<p align="center">
+<img src="https://github.com/ivaste/Algorithms/blob/master/Images/BinaryTree.JPG"/>
+</p>
+
+**Time Complexity:**
+
+| Operation    | Running Time |
+| -----------  |-------------:|
+| len, isEmpty | O(1)         |
+| root, parent, left, right, sibling, children  | O(1)         |
+| isRoot, isLeaf    | O(1)         |
+| depth(n)  | O(depth of n + 1)         |
+| height       | O(n)         |
+
+**Space Complexity:** O(n)
+
+
+**Array based implementation:**
+Level numbering f(v): index of the array where to store the node v
+ - If v is the root of T, then f(v)=0.
+ - If v is the left child of position q, then f(v)=2f(w)+1.
+ - If v is the right child of position q, then f(v)=2f(w)+2.
+Parent index = <img src="https://latex.codecogs.com/gif.latex?\left&space;\lfloor&space;(f(v)-1)/2&space;\right&space;\rfloor" title="\left \lfloor (f(v)-1)/2 \right \rfloor" />
+Array length  N=2^n-1 worst case (That is prohibitive if n is very large)
+
+
+## Traversal Algorithms
 ...
-### Binary Trees
-...
-### Traversal Algorithms
-...
-### Solve Tree problems recursively
+## Solve Tree problems recursively
 ...
 
 
 <!-- ------------------------------------------------------------------- -->
 
-## Search Trees
+# Search Trees
 ....
 
-### Binary Search Trees
+## Binary Search Trees
 ...
-### Balanced Search Trees
+## Balanced Search Trees
 ...
-### AVL Trees
+## AVL Trees
 ...
-### Red-Black Trees
+## Red-Black Trees
 ...
