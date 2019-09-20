@@ -293,18 +293,22 @@ Array length  N=2^n-1 worst case (That is prohibitive if n is very large)
 ## Solve Tree problems recursively
 **Top-down:** visit the node first to come up with some values, and pass these values to its children when calling the function recursively. Kind of preorder.  
 **top_down(root, params):**
+```
 1. return specific value for null node
 2. update the answer if needed                      // answer <-- params
 3. left_ans = top_down(root.left, left_params)      // left_params <-- root.val, params
 4. right_ans = top_down(root.right, right_params)   // right_params <-- root.val, params 
 5. return the answer if needed                      // answer <-- left_ans, right_ans
+```
 
 **Bottom-Up:** first call the functions recursively for all the children nodes and then come up with the answer according to the return values and the value of the root node itself. Kind of postorder.  
 **bottom_up(root):**
+```
 1. return specific value for null node
 2. left_ans = bottom_up(root.left)          // call function recursively for left child
 3. right_ans = bottom_up(root.right)        // call function recursively for right child
 4. return answers                           // answer <-- left_ans, right_ans, root.val
+```
 
 When you meet a tree problem, ask yourself two questions:
  - Can you determine some parameters to help the node know the answer of itself?
@@ -331,7 +335,7 @@ If you want to store data in order and need several operations, such as search, 
 **Search(k):** for each node:
  - return the node if the target value is equal to the value of the node;
  - continue searching in the left subtree if the target value is less than the value of the node;
- - continue searching in the right subtree if the target value is larger than the value of the node.
+ - continue searching in the right subtree if the target value is larger than the value of the node.\
 **Time:** O(h)=**O(log⁡  n) average**, worst O(n)  
 Space: O(h)=O(log ⁡n) average, worst O(n)  
 The iterative: Time O(h)=O(log⁡ n), Space O(1)
@@ -367,8 +371,22 @@ On average, a binary search tree with n keys generated from a random series of i
 In applications where one cannot guarantee the random nature of updates, rely on variations of search trees, that guarantee a worst-case height of O(logn), and thus O(logn) worstcase time for searches, insertions, and deletions.
 
 ## Balanced Search Trees
-...
+**Ensures search, insert and delete in O(log⁡       n), height is always O(log⁡ n)**\
+Used especially in sets and maps.
+
+Augmenting a standard binary search tree with occasional operations to reshape the tree and reduce its height.\
+**Rotation:** O(1). allows the shape of a tree to be modified while maintaining the search tree property.
+<p align="center">
+<img src="https://github.com/ivaste/Algorithms/blob/master/Images/Rotation.JPG"/>
+</p>
+
+**Trinode restructuring:** One or more rotations combined to provide broader rebalancing. O(1)
+
 ## AVL Trees
+Balancing strategy that guarantees worst-case logarithmic running time for all the fundamental
+map operations.\
+**Height-Balance Property:** For every node n, the heights of the children differ by at most 1.
+
 ...
 ## Red-Black Trees
 ...
