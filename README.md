@@ -21,6 +21,9 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
 	- [AVL Trees](#AVL-Trees)
 	- [Red-Black Trees](#Red-Black-Trees)
  - [Tries](#Tries)
+	- [Standard Trie](#Standard-Trie)
+	- [Compressed Trie](#Compressed-Trie)
+	- [Suffix Trie](#Suffix-Trie)
  - [Graphs](#Graphs)
  - [Heaps](#Heaps)
 
@@ -404,17 +407,18 @@ Let S be a set of s strings from alphabet Σ such that no string in S is a prefi
 **Standard trie** for S is an ordered tree T with the following properties:
  - Each node of T, except the root, is labeled with a character of Σ.
  - The children of an internal node of T have distinct labels.
- - T has s leaves, each associated with a string of S, such that the concatenation of the labels of the nodes on the path from the root to a leaf v of T yields the string of S associated with v.\
+ - T has s leaves, each associated with a string of S, such that the concatenation of the labels of the nodes on the path from the root to a leaf v of T yields the string of S associated with v.
+
 Trie T represents the strings of S with paths from the root to the leaves of T.\
 Each string of S is uniquely associated with a leaf of T.\
 An internal node can have anywhere between 1 and |Σ| children.\
-If there are only two characters in the alphabet, then the trie is essentially a binary tree, with some internal nodes possibly having only one child.\
+If there are only two characters in the alphabet, then the trie is essentially a binary tree, with some internal nodes possibly having only one child.
 
 A **standard trie** storing a collection S of s strings of total length n from an alphabet Σ has the following properties:
  - The height of T is equal to the length of the longest string in S.
  - Every internal node of T has at most |Σ| children. Or +1 if it uses a Boolean flag.
  - T has s leaves
- - The number of nodes of T is at most n+1.\
+ - The number of nodes of T is at most n+1.
 
 A trie can be used to implement a set or map whose keys are the strings of S.\
 
@@ -429,10 +433,15 @@ A trie can be used to implement a set or map whose keys are the strings of S.\
 | Delete    | O(m)         |
 
 **Space Complexity:** O(n) where n is the lenght of all words\
-
+<p align="center">
 <img src="https://github.com/ivaste/Algorithms/blob/master/Images/StandardTrie.JPG"/>
+</p>
 
 
+## Compressed Trie
+...
+
+## Suffix Trie
 
 <!-- ------------------------------------------------------------------- -->
 # Graphs
