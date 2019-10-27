@@ -1,4 +1,5 @@
-#Trie
+#Trie. Each node has a map {} that stores its children.
+# If the node represent the end of a word, a special character "#" in the map is used as a FLAG
 class Trie:
 
 	def __init__(self):

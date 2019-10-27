@@ -11,12 +11,12 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
  - [Stacks](#Stacks)
  - [Queues](#Queues)
  - [Trees](#Trees)
-  - [General Trees](#General-Trees)
+	- [General Trees](#General-Trees)
 	- [Binary Trees](#Binary-Trees)
 	- [Traversal Algorithms](#Traversal-Algorithms)
 	- [Solve Tree problems recursively](#Solve-Tree-problems-recursively)
  - [Search Trees](#Search-Trees)
-  - [Binary Search Trees](#Binary-Search-Trees)
+	- [Binary Search Trees](#Binary-Search-Trees)
 	- [Balanced Search Trees](#Balanced-Search-Trees)
 	- [AVL Trees](#AVL-Trees)
 	- [Red-Black Trees](#Red-Black-Trees)
@@ -390,4 +390,56 @@ map operations.\
 
 ...
 ## Red-Black Trees
+...
+
+
+<!-- ------------------------------------------------------------------- -->
+# Tries
+String searching algorithms that preprocess the text, for applications where a series of queries is performed on a fixed text, so that the initial cost of preprocessing the text is compensated by a speedup in each subsequent query.\
+
+**Trie:** tree-based data structure for storing strings, support fast pattern matching and prefix matching.\
+
+## Standard Trie
+Let S be a set of s strings from alphabet Σ such that no string in S is a prefix of another string.\
+**Standard trie** for S is an ordered tree T with the following properties:
+	 - Each node of T, except the root, is labeled with a character of Σ.
+	 - The children of an internal node of T have distinct labels.
+	 - T has s leaves, each associated with a string of S, such that the concatenation of the labels of the nodes on the path from the root to a leaf v of T yields the string of S associated with v.\
+Trie T represents the strings of S with paths from the root to the leaves of T.\
+Each string of S is uniquely associated with a leaf of T.\
+An internal node can have anywhere between 1 and |Σ| children.\
+If there are only two characters in the alphabet, then the trie is essentially a binary tree, with some internal nodes possibly having only one child.\
+\
+A **standard trie** storing a collection S of s strings of total length n from an alphabet Σ has the following properties:
+ - The height of T is equal to the length of the longest string in S.
+ - Every internal node of T has at most |Σ| children. Or +1 if it uses a Boolean flag.
+ - T has s leaves
+ - The number of nodes of T is at most n+1.\
+\
+A trie can be used to implement a set or map whose keys are the strings of S.\
+\
+**Implementation:** with a *dict* and flag nodes: [Trie.py](https://github.com/ivaste/Algorithms/blob/master/Trie.py)
+\
+
+**Time Complexity:** m is the lenght of a single word
+
+| Operation    | Running Time |
+| -----------  |-------------:|
+| Search | O(m)         |
+| Insert  | O(m)         |
+| Delete    | O(m)         |
+
+**Space Complexity:** O(n) where n is the lenght of all words\
+
+<img src="https://github.com/ivaste/Algorithms/blob/master/Images/StandardTrie.JPG"/>
+
+
+
+<!-- ------------------------------------------------------------------- -->
+# Graphs
+...
+
+
+<!-- ------------------------------------------------------------------- -->
+# Heaps
 ...
