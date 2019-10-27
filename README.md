@@ -44,13 +44,13 @@ Quick reference of Data Structures and Algorithms in Python to easily pass codin
 
 <!-- ------------------------------------------------------------------- -->
 
-## Hash Tables
+# Hash Tables
 ....
 
 
 <!-- ------------------------------------------------------------------- -->
 
-## Linked List
+# Linked List
 Advantages of Array-Based Sequences
 -	O(1)-time access to an element based on an integer index. in a linked list requires O(k)
 -	O(1) operations typically are more efficient.
@@ -76,7 +76,7 @@ Solution techniques:
 | L.isEmpty()     | O(1)         |
 | len(L)          | O(1)         |
 
-### Singly Linked Lists
+## Singly Linked Lists
 Each node stores a reference to an object and a reference to the next node of the list.
 First and last node are known as the **head** and **tail**
 <p align="center">
@@ -88,7 +88,7 @@ The linked list instance must keep a reference to the head of the list. Often is
 - [SingleLinkedList.py](https://github.com/ivaste/Algorithms/blob/master/SingleLinkedList.py) (More common)
 - [SingleLinkedList2.py](https://github.com/ivaste/Algorithms/blob/master/SingleLinkedList2.py) (Less common but easier)
 
-### Doubly Linked Lists
+## Doubly Linked Lists
 Each node keeps an explicit reference to the node before it and a reference to the node after it.
 Allow a greater variety of O(1)-time update operations, including insertions and deletions at arbitrary positions within the list.
 
@@ -100,14 +100,14 @@ An empty list is initialized so that the next field of the header points to the 
 
 **Implementation:** [DoublyLinkedBase.py](https://github.com/ivaste/Algorithms/blob/master/DoublyLinkedBase.py)
 
-### Positional Linked Lists
+## Positional Linked Lists
 Provides a user a way to refer to elements anywhere in a sequence, and to perform arbitrary insertions and deletions.
 
 continue.....
 
 <!-- ------------------------------------------------------------------- -->
 
-## Stacks
+# Stacks
 
 **Last-in, first-out (LIFO)** principle. 
 Used to:
@@ -141,7 +141,7 @@ A newly created stack is empty.
 
 <!-- ------------------------------------------------------------------- -->
 
-## Queues
+# Queues
 
 **First-in, first-out (FIFO)** principle.
 
@@ -442,6 +442,8 @@ A trie can be used to implement a set or map whose keys are the strings of S.\
 ...
 
 ## Suffix Trie
+...
+
 
 <!-- ------------------------------------------------------------------- -->
 # Graphs
