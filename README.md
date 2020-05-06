@@ -203,12 +203,12 @@ Tree class: in interviews typically is not used.
 **Ordered Tree:** if there is a meaningful linear order among the children of each node; arranging siblings left to right, according to their order.
 
 **Depth** of a node (2 ways):
- - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1" />
- - <img src="https://latex.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" /> **O(n)** worst case
+ - <img src="https://microsoft.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1" />
+ - <img src="https://microsoft.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" /> **O(n)** worst case
 
 **Level _i_:** set of nodes at depth _i_  
 **Height** of a node:
- - <img src="https://latex.codecogs.com/gif.latex?\text{height}_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=\text{leaf}&space;\\&space;1&plus;\text{max}_{\forall&space;w:\text{\&space;child\&space;of\&space;}v}(\text{height}_T(w))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="\text{height}_T(v)=\begin{cases} 0 & \text{ if } v=\text{leaf} \\ 1+\text{max}_{\forall w:\text{\ child\ of\ }v}(\text{height}_T(w)) & \text{ otherwise } \end{cases}" />  **O(n)** worst case
+ - <img src="https://microsoft.codecogs.com/gif.latex?\text{height}_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=\text{leaf}&space;\\&space;1&plus;\text{max}_{\forall&space;w:\text{\&space;child\&space;of\&space;}v}(\text{height}_T(w))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="\text{height}_T(v)=\begin{cases} 0 & \text{ if } v=\text{leaf} \\ 1+\text{max}_{\forall w:\text{\ child\ of\ }v}(\text{height}_T(w)) & \text{ otherwise } \end{cases}" />  **O(n)** worst case
 
 
 **Implementation with Linked Structure:** Each node store a single container of references to its children.
@@ -243,8 +243,8 @@ Properties:
 
 **Proper(full) Binary tree:** if each node has either 0 or 2 children  
 Proprieties:
- - <img src="https://latex.codecogs.com/gif.latex?\text{log}(n&plus;1)-1\leq&space;h\leq&space;(n-1)/2" title="\text{log}(n+1)-1\leq h\leq (n-1)/2" />
- - <img src="https://latex.codecogs.com/gif.latex?n_E=n_I&plus;1" title="n_E=n_I+1" />
+ - <img src="https://microsoft.codecogs.com/gif.latex?\text{log}(n&plus;1)-1\leq&space;h\leq&space;(n-1)/2" title="\text{log}(n+1)-1\leq h\leq (n-1)/2" />
+ - <img src="https://microsoft.codecogs.com/gif.latex?n_E=n_I&plus;1" title="n_E=n_I+1" />
 
 **Complete Binary tree:** every level is fully filled except perhaps the last level. (Filled left to right)  
 **Perfect Binary tree:** bot full and complete. All levels has the maximum number of nodes.
@@ -280,7 +280,7 @@ Level numbering f(v): index of the array where to store the node v
  - If v is the root of T, then f(v)=0.
  - If v is the left child of position q, then f(v)=2f(w)+1.
  - If v is the right child of position q, then f(v)=2f(w)+2.  
-Parent index = <img src="https://latex.codecogs.com/gif.latex?\left&space;\lfloor&space;(f(v)-1)/2&space;\right&space;\rfloor" title="\left \lfloor (f(v)-1)/2 \right \rfloor" />  
+Parent index = <img src="https://microsoft.codecogs.com/gif.latex?\left&space;\lfloor&space;(f(v)-1)/2&space;\right&space;\rfloor" title="\left \lfloor (f(v)-1)/2 \right \rfloor" />  
 Array length  N=2^n-1 worst case (That is prohibitive if n is very large)
 
 
