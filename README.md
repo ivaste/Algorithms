@@ -203,8 +203,8 @@ Tree class: in interviews typically is not used.
 **Ordered Tree:** if there is a meaningful linear order among the children of each node; arranging siblings left to right, according to their order.
 
 **Depth** of a node (2 ways):
- - <img src="https://microsoft.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1" />
- - <img src="https://microsoft.codecogs.com/gif.latex?depth_T(v)=\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" title="depth_T(v)=\begin{cases} 0 & \text{ if } v=root \\ 1+depth_T(parent(v)) & \text{ otherwise } \end{cases}" /> **O(n)** worst case
+ - <img src="https://microsoft.codecogs.com/gif.latex?depth_T(v)=|ancestors(v)|-1." />
+ - <img src="https://microsoft.codecogs.com/svg.latex?\begin{cases}&space;0&space;&&space;\text{&space;if&space;}&space;v=root&space;\\&space;1&plus;depth_T(parent(v))&space;&&space;\text{&space;otherwise&space;}&space;\end{cases}" /> **O(n)** worst case
 
 **Level _i_:** set of nodes at depth _i_  
 **Height** of a node:
